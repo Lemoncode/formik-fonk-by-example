@@ -31,7 +31,7 @@ import React from 'react';
 export const Playground = () => {
   return (
     <div>
-      <h1>React Final Form and Fonk</h1>
+      <h1>Formik and Fonk</h1>
 -     <h2>Playground</h2>
 +     <h2>Wire transfer form</h2>
 +     <Formik
@@ -46,12 +46,11 @@ export const Playground = () => {
 +            handleChange,
 +            handleSubmit,
 +          } = props;
-+       } = props;
 +
 +       return (
 +         <form onSubmit={handleSubmit}>
 +         </form>
-+       )}
++       )}}
 +     </Formik>
     </div>
   );
@@ -83,43 +82,69 @@ _./src/playground.jsx_
 _./src/playground.jsx_
 
 ```diff
+- import { Formik } from 'formik';
++ import { Field, Formik } from 'formik';
+
 ...
-+       return (
-+         <form onSubmit={handleSubmit}>
-+          <Field
-+            name="account"
-+            placeholder="Beneficiary IBAN"
-+          />
-+           <Field 
-+             name="name"/>
-+             placeholder="Beneficiary fullname"
-+           </Field>
-+           <Field 
-+             name="integerAmount"/>
-+             placeholder="Amount of wire"
-+           </Field>
-+             <strong>.</strong>
-+           <Field 
-+             name="decimalAmount"/>
-+             placeholder="Decimal"
-+           </Field>
-+           <Field 
-+             name="reference"/>
-+             placeholder="Reference"
+       return (
+         <form onSubmit={handleSubmit}>
++              <Field name="account">
++                {({ field }) => (
++                  <div>
++                    <label>Beneficiary IBAN:</label>
++                    <input {...field} />
++                  </div>
++                )}
++              </Field>
++              <Field name="name">
++                {({ field }) => (
++                  <div>
++                    <label>Beneficiary fullname:</label>
++                    <input {...field} />
++                  </div>
++                )}
++              </Field>
++              <div>
++                 <label>Amount of wire:</label>
++                 <Field name="integerAmount" type="number">
++                   {({ field }) => <input {...field} className="amount-field" />}
++                 </Field>
++                 <strong>.</strong>
++              <Field name="decimalAmount" type="number">
++                {({ field }) => (
++                  <>
++                    <input {...field} className="amount-field" />
++                    <label>EUR</label>
++                  </>
++                )}
++              </Field>
++           </div>
++           <Field name="reference">
++             {({ field }) => (
++                <div>
++                  <label>Reference:</label>
++                  <input {...field} />
++                </div>
++             )}
 +           </Field>
 +           <p>
 +             If you want to send a notice to the beneficiary, inform the e-mail
 +           </p>
-+           <Field 
-+             name="email"/>
-+             placeholder="Beneficiary Email"
++           <Field
++             name="email">
++             {({ field }) => (
++                <div>
++                  <label>Beneficiary Email:</label>
++                  <input {...field} />
++                </div>
++             )}
 +           </Field>
-+         </form>
-+       )}
+         </form>
+       )}
 ```
 
-****Til here, test first layout then keep on moving
-****Likely to impement label field entry
+\***\*Til here, test first layout then keep on moving
+\*\***Likely to impement label field entry
 
 - Let's add some code to handle the submit button (we will make a console.log showing the field values):
 
