@@ -143,16 +143,13 @@ _./src/playground.jsx_
        )}
 ```
 
-\***\*Til here, test first layout then keep on moving
-\*\***Likely to impement label field entry
-
 - Let's add some code to handle the submit button (we will make a console.log showing the field values):
 
 _./src/playground.jsx_
 
 ```diff
 ...
-      <Form
+      <Formik
 -       onSubmit={() => {}}
 +       onSubmit={values => {
 +         console.log({ values });

@@ -14,7 +14,7 @@ In this example we setup the basic plumbing to get up and running our project wi
 npm install
 ```
 
-- Let's start by installing Final Form
+- Let's start by installing Fonk
 
 ```bash
 npm install @lemoncode/fonk @lemoncode/fonk-final-form --save
@@ -25,11 +25,11 @@ npm install @lemoncode/fonk @lemoncode/fonk-final-form --save
 _./src/form-validation.js_
 
 ```javascript
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation } from '@lemoncode/fonk-final-form';
 
 const validationSchema = {};
 
-export const formValidation = createFinalFormValidation(validationSchema);
+export const formValidation = createFormikValidation(validationSchema);
 ```
 
 - We got everything we need let's wire up this into Formik:
@@ -66,7 +66,7 @@ _./src/form-validation.js_
 
 ```diff
 + import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation } from '@lemoncode/fonk-final-form';
 
 const validationSchema = {
 + field: {
@@ -79,7 +79,7 @@ const validationSchema = {
 + },
 };
 
-export const formValidation = createFinalFormValidation(validationSchema);
+export const formValidation = createFormikValidation(validationSchema);
 
 ```
 
@@ -119,12 +119,12 @@ import { formValidation } from './form-validation';
                 <label>Amount of wire:</label>
                 <Field name="integerAmount" type="number">
 -                  {({ field }) => <input {...field} className="amount-field" />}
-+ {({ field }) =>
-+ <div className="amount-field">
-+   <input {...field} className="amount-field" />
-+   <ErrorMessage component="span" name="integerAmount" />
-+ </div>
-+}
++                  {({ field }) =>
++                    <div className="amount-field">
++                      <input {...field} className="amount-field" />
++                      <ErrorMessage component="span" name="integerAmount" />
++                      </div>
++                  }
                 </Field>
                 <strong>.</strong>
                 <Field name="decimalAmount" type="number">

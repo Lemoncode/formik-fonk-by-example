@@ -1,4 +1,4 @@
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation } from '@lemoncode/fonk-formik';
 import { Validators } from '@lemoncode/fonk';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
@@ -44,4 +44,4 @@ export const validationSchema = {
   },
 };
 
-export const formValidation = createFinalFormValidation(validationSchema);
+export const formValidation = createFormikValidation(validationSchema);
