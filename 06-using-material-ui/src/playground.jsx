@@ -32,8 +32,12 @@ export const Playground = () => {
 
   return (
     <div>
-      <h1>Formik and Fonk</h1>
-      <h2>Wire transfer form</h2>
+      <Typography variant="h3" component="h2" gutterBottom>
+        Formik and Fonk
+      </Typography>
+      <Typography variant="h4" component="h2" gutterBottom>
+        Wire transfer form
+      </Typography>
       <Formik
         onSubmit={values => {
           console.log({ values });
