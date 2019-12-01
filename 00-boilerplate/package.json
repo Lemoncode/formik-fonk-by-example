@@ -1,7 +1,7 @@
 {
-  "name": "react-final-form-and-fonk",
+  "name": "formik-and-fonk",
   "version": "1.0.0",
-  "description": "Examples using React Final Form and Fonk",
+  "description": "Examples using Formik and Fonk",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
