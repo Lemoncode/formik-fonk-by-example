@@ -70,12 +70,12 @@ import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
 
 const validationSchema = {
 + field: {
-+   account: [Validators.required.validator],
-+   name: [Validators.required.validator],
-+   integerAmount: [Validators.required.validator],
-+   decimalAmount: [Validators.required.validator],
-+   reference: [Validators.required.validator],
-+   email: [Validators.required.validator],
++   account: [Validators.required],
++   name: [Validators.required],
++   integerAmount: [Validators.required],
++   decimalAmount: [Validators.required],
++   reference: [Validators.required],
++   email: [Validators.required],
 + },
 };
 
@@ -212,8 +212,8 @@ import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
 const validationSchema = {
   field: {
     account: [
-      Validators.required.validator,
-+     iban.validator,
+      Validators.required,
++     iban,
     ],
     ...
   },
@@ -248,9 +248,9 @@ const validationSchema = {
   field: {
     ...
     integerAmount: [
-      Validators.required.validator,
+      Validators.required,
 +     {
-+       validator: rangeNumber.validator,
++       validator: rangeNumber,
 +       customArgs: {
 +         min: {
 +           value: 0,
@@ -299,7 +299,7 @@ const validationSchema = {
       Validators.required.validator,
       iban.validator,
 +     {
-+       validator: Validators.pattern.validator,
++       validator: Validators.pattern,
 +       customArgs: {
 +         pattern: /^(?!FR)/i,
 +       },
