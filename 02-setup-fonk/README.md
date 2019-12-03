@@ -4,7 +4,7 @@ In this example we setup the basic plumbing to get up and running our project wi
 
 ## Play with demo:
 
-[![React Final Form and Fonk 02-setup-fonk example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/02-setup-fonk)
+[![Formik and Fonk 02-setup-fonk example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/02-setup-fonk)
 
 ## Steps to build it
 
@@ -17,7 +17,7 @@ npm install
 - Let's start by installing Fonk
 
 ```bash
-npm install @lemoncode/fonk @lemoncode/fonk-final-form --save
+npm install @lemoncode/fonk @lemoncode/fonk-formik --save
 ```
 
 - Now let's define an empty form validationSchema and create an instance of Fonk validation engine passing as parameter the already created:
@@ -25,7 +25,7 @@ npm install @lemoncode/fonk @lemoncode/fonk-final-form --save
 _./src/form-validation.js_
 
 ```javascript
-import { createFormikValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation } from '@lemoncode/fonk-formik';
 
 const validationSchema = {};
 
@@ -66,7 +66,7 @@ _./src/form-validation.js_
 
 ```diff
 + import { Validators } from '@lemoncode/fonk';
-import { createFormikValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation } from '@lemoncode/fonk-formik';
 
 const validationSchema = {
 + field: {
@@ -206,7 +206,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFinalFormValidation } from '@lemoncode/fonk-formik';
 + import { iban } from '@lemoncode/fonk-iban-validator';
 
 const validationSchema = {
@@ -240,7 +240,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFinalFormValidation } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 + import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 

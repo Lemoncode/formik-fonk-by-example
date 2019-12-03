@@ -4,7 +4,7 @@ In this example we are going to create a custom record validator with Fonk.
 
 ## Play with demo:
 
-[![React Final Form and Fonk 05-custom-record-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/05-custom-record-validator)
+[![Formik and Fonk 05-custom-record-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/05-custom-record-validator)
 
 ## Steps to build it
 

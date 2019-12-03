@@ -4,7 +4,7 @@ In this example we setup the basic plumbing to get up and running our project an
 
 ## Play with demo:
 
-[![React Final Form and Fonk 00-boilerplate example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/00-boilerplate)
+[![Formik and Fonk 00-boilerplate example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/final-form-fonk-by-example/tree/master/00-boilerplate)
 
 ## Steps to build it
 
