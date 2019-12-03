@@ -206,7 +206,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-formik';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 + import { iban } from '@lemoncode/fonk-iban-validator';
 
 const validationSchema = {
@@ -240,7 +240,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-formik';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 + import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 

@@ -58,7 +58,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation  } from '@lemoncode/fonk-final-form';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 + import { ibanBlackList } from './custom-validators';
