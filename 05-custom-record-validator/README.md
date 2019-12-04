@@ -4,7 +4,7 @@ In this example we are going to create a custom record validator with Fonk.
 
 ## Play with demo:
 
-[![React Final Form and Fonk 05-custom-record-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/05-custom-record-validator)
+[![Formik and Fonk 05-custom-record-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/05-custom-record-validator)
 
 ## Steps to build it
 
@@ -70,7 +70,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 - import { ibanBlackList } from './custom-validators';
@@ -85,7 +85,7 @@ export const validationSchema = {
 + },
 };
 
-export const formValidation = createFinalFormValidation(validationSchema);
+export const formValidation = createFormikValidation (validationSchema);
 
 ```
 
@@ -95,10 +95,8 @@ _./src/playground.jsx_
 
 ```diff
 ...
-      <Form
+      <Formik
         ...
--       render={({ handleSubmit }) => (
-+       render={({ handleSubmit, errors }) => (
           <form onSubmit={handleSubmit}>
             ...
             </Field>

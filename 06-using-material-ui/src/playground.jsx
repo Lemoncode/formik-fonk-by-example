@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import { formValidation, validationSchema } from './form-validation';
 import { getDisabledCountryIBANCollection } from './api';
 import { countryBlackList } from './custom-validators';
-import { TextField, RecordError } from './components';
+import { TextField } from './components';
 
 export const Playground = () => {
   React.useEffect(() => {
@@ -54,11 +54,7 @@ export const Playground = () => {
       >
         {props => {
           const {
-            values,
-            touched,
             errors,
-            dirty,
-            handleChange,
             handleSubmit,
           } = props;
 
@@ -69,7 +65,6 @@ export const Playground = () => {
                   <TextField {...field} label="Beneficiary IBAN" meta={meta} />
                 )}
               </Field>
-              <ErrorMessage component="span" name="account" />
               <Field name="name">
                 {({ field, meta }) => (
                   <TextField

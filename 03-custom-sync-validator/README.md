@@ -4,7 +4,7 @@ In this example we are going to create a sync custom validator with Fonk.
 
 ## Play with demo:
 
-[![React Final Form and Fonk 03-custom-sync-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/03-custom-sync-validator)
+[![Formik and Fonk 03-custom-sync-validator example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/03-custom-sync-validator)
 
 ## Steps to build it
 
@@ -57,7 +57,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 + import { countryBlackList } from './custom-validators';
@@ -65,8 +65,8 @@ import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 const validationSchema = {
   field: {
     account: [
-      Validators.required.validator,
-      iban.validator,
+      Validators.required,
+      iban,
 -     {
 -       validator: Validators.pattern,
 -       customArgs: {
@@ -87,7 +87,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFinalFormValidation } from '@lemoncode/fonk-final-form';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 - import { countryBlackList } from './custom-validators';
@@ -96,8 +96,8 @@ import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 + export const validationSchema = {
   field: {
     account: [
-      Validators.required.validator,
-      iban.validator,
+      Validators.required,
+      iban,
 -     { validator: countryBlackList, customArgs: { countries: ['FR', 'ES'] } },
     ],
     ...
@@ -109,7 +109,7 @@ _./src/playground.jsx_
 
 ```diff
 import React from 'react';
-import { Form, Field } from 'react-final-form';
+import { Form, Field } from 'formik';
 - import { formValidation } from './form-validation';
 + import { formValidation, validationSchema } from './form-validation';
 + import { getDisabledCountryIBANCollection } from './api';
@@ -140,7 +140,7 @@ export const Playground = () => {
 
   return (
     <div>
-      <h1>React Final Form and Fonk</h1>
+      <h1>Formik and Fonk</h1>
       <h2>Wire transfer form</h2>
       <Form
       ...

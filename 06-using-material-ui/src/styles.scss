@@ -38,5 +38,11 @@
       justify-content: center;
       margin-top: 15px;
     }
+
+    & > span {
+      display: block;
+      margin-top: 1rem;
+      color: #f44336;
+    }
   }
 }
