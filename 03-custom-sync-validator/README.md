@@ -57,7 +57,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFormikValidation  } from '@lemoncode/fonk-final-form';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 + import { countryBlackList } from './custom-validators';
@@ -65,8 +65,8 @@ import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 const validationSchema = {
   field: {
     account: [
-      Validators.required.validator,
-      iban.validator,
+      Validators.required,
+      iban,
 -     {
 -       validator: Validators.pattern,
 -       customArgs: {
@@ -87,7 +87,7 @@ _./src/form-validation.js_
 
 ```diff
 import { Validators } from '@lemoncode/fonk';
-import { createFormikValidation  } from '@lemoncode/fonk-final-form';
+import { createFormikValidation  } from '@lemoncode/fonk-formik';
 import { iban } from '@lemoncode/fonk-iban-validator';
 import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 - import { countryBlackList } from './custom-validators';
@@ -96,8 +96,8 @@ import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 + export const validationSchema = {
   field: {
     account: [
-      Validators.required.validator,
-      iban.validator,
+      Validators.required,
+      iban,
 -     { validator: countryBlackList, customArgs: { countries: ['FR', 'ES'] } },
     ],
     ...
@@ -109,7 +109,7 @@ _./src/playground.jsx_
 
 ```diff
 import React from 'react';
-import { Form, Field } from 'react-final-form';
+import { Form, Field } from 'formik';
 - import { formValidation } from './form-validation';
 + import { formValidation, validationSchema } from './form-validation';
 + import { getDisabledCountryIBANCollection } from './api';

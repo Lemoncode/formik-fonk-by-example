@@ -4,7 +4,7 @@ In this example we setup the basic plumbing to get up and running our project wi
 
 ## Play with demo:
 
-[![Formik and Fonk 01-setup-final-form example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/01-setup-formik)
+[![Formik and Fonk 01-setup-formik example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/lemoncode/formik-fonk-by-example/tree/master/01-setup-formik)
 
 ## Steps to build it
 
