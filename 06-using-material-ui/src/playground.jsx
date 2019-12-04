@@ -65,7 +65,6 @@ export const Playground = () => {
                   <TextField {...field} label="Beneficiary IBAN" meta={meta} />
                 )}
               </Field>
-              <ErrorMessage component="span" name="account" />
               <Field name="name">
                 {({ field, meta }) => (
                   <TextField
