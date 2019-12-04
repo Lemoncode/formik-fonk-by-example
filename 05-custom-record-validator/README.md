@@ -95,10 +95,8 @@ _./src/playground.jsx_
 
 ```diff
 ...
-      <Form
+      <Formik
         ...
--       render={({ handleSubmit }) => (
-+       render={({ handleSubmit, errors }) => (
           <form onSubmit={handleSubmit}>
             ...
             </Field>
