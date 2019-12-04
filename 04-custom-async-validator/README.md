@@ -66,8 +66,8 @@ import { rangeNumber } from '@lemoncode/fonk-range-number-validator';
 export const validationSchema = {
   field: {
     account: [
-      Validators.required.validator,
-      iban.validator,
+      Validators.required,
+      iban,
 +     ibanBlackList,
     ],
     ...
